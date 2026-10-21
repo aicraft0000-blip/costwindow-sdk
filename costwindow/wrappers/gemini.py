@@ -11,12 +11,12 @@ class TrackedGeminiClient:
         from costwindow.wrappers.gemini import TrackedGeminiClient
 
         cw = CostWindow(api_key="cw_live_...")
-        model = genai.GenerativeModel("gemini-1.5-pro")
-        tracked = TrackedGeminiClient(model, cw=cw, label="my-process", model_name="gemini-1.5-pro")
+        model = genai.GenerativeModel("gemini-3.8-flash")
+        tracked = TrackedGeminiClient(model, cw=cw, label="my-process", model_name="gemini-3.8-flash")
         response = tracked.generate_content("Your prompt here")
     """
 
-    def __init__(self, model, *, cw, label: str, model_name: str = "gemini-1.5-pro"):
+    def __init__(self, model, *, cw, label: str, model_name: str = "gemini-3.8-flash"):
         self._model = model
         self._cw = cw
         self._label = label
